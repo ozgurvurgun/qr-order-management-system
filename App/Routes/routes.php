@@ -41,12 +41,6 @@ use \CompartSoftware\System\Core\Router;
 */
 
 //homepage start
-Router::run('/', 'HomePage@index');
-Router::run('/profile', 'profile/change@index');
-Router::run('/ozgur', 'profile/test@index');
-Router::run('/ece', 'deneme/test@index');
-Router::run('/ela/fatma/hatce', 'ela/ayaz/abc@index');
+//Router::run('/', 'HomePage@index');
+Router::run('/{url}/{id}', 'restaurant/HomePage@index');
 Router::hasRoute();
-
-
-
