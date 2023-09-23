@@ -1,5 +1,5 @@
 <?php
-$BASE_PATH = '/example';
+$BASE_PATH = '/qr-order-management-system';
 
 /**
  * Variables containing necessary information for the database connection
