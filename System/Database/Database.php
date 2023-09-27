@@ -12,7 +12,8 @@ class Database
     public function __construct()
     {
         //bu yol dosya direkt çalıştırılacağında kullanılır
-        require __DIR__ . '/../../env.php';
+        //require __DIR__ . '/../../env.php';
+        require 'env.php';
         $this->hostname = $DB_HOST;
         $this->username = $DB_USER;
         $this->password = $DB_PASSWORD;
@@ -20,7 +21,7 @@ class Database
         try {
             $this->db = new \PDO("mysql:host=$this->hostname;dbname=$this->databaseName;", "$this->username", "$this->password");
             $this->db->query('SET CHARACTER SET utf8');
-            // echo "connected";
+            //  echo "connected";
         } catch (\PDOException $e) {
             echo '<pre><span style="color:red">CONNECTION ERROR: </span>' . $e->getMessage() . '</pre>';
         }
