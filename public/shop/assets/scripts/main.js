@@ -19,7 +19,6 @@ document.querySelector("#basket").addEventListener("click", popup);
 /*** popup end ***/
 
 /*** get product start ***/
-let globalProductData;
 const categoryButtons = document.querySelectorAll(".category-item");
 const xhttp = new XMLHttpRequest();
 categoryButtons.forEach((button) => {
@@ -44,7 +43,7 @@ function getProducts(categoryID, categoryName) {
         productData.forEach((element) => {
           productDataView += `
         <div class="product-item">
-          <img class="product-image"src="public/shop/assets/images/${routing_name}/products/${element.product_picture}">
+          <img class="product-image"src="${base_url}public/shop/assets/images/${routing_name}/products/${element.product_picture}">
           <div class="product-info">
             <h3 class="product-name">${element.product_name}</h3>
             <p class="product-price">${element.product_price}</p>
@@ -66,7 +65,8 @@ function getProducts(categoryID, categoryName) {
       }, 200);
     }
   };
-  xhttp.open("POST", "qr-menu/api/shop/product", true);
+
+  xhttp.open("POST", `${base_url}api/shop/product`, true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(`category_id=${categoryID}`);
 }
@@ -118,7 +118,7 @@ function uiDraw() {
   cart.forEach((element) => {
     basketDOM += ` 
       <div class="product-item">
-         <img class="product-image" src="public/shop/assets/images/${routing_name}/products/${element.product_picture}">
+         <img class="product-image" src="${base_url}public/shop/assets/images/${routing_name}/products/${element.product_picture}">
          <div class="product-info">
            <h3 class="product-name">${element.product_name}</h3>
            <p class="product-price">${element.product_price}</p>

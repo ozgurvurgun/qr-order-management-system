@@ -1,6 +1,6 @@
 <?php
-$coreDirectory = __DIR__ . '/System/Core/';
-$databaseDirectory = __DIR__ . '/System/Database/';
+$coreDirectory = __DIR__ . '/system/core/';
+$databaseDirectory = __DIR__ . '/system/database/';
 
 $databaseFiles = scandir($databaseDirectory);
 foreach ($databaseFiles as $file) {

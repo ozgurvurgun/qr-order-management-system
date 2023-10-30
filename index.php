@@ -1,6 +1,5 @@
 <?php
 error_reporting(E_ALL);
-session_start();
 require __DIR__ . '/autoload.php';
-require 'App/Routes/apis.php';
-require 'App/Routes/routes.php';
+require 'app/routes/apis.php';
+require 'app/routes/routes.php';

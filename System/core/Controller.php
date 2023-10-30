@@ -15,9 +15,10 @@ class Controller
         /*  echo $name;
             echo $surname;
         */
-
+        require 'env.php';
+        
         $fileName = $this->viewFolderDepth($name);
-        require_once 'App/Views/' . $fileName;
+        require_once 'app/views/' . $fileName;
     }
 
     /**
@@ -26,7 +27,7 @@ class Controller
     public function model(string $name)
     {
         $fileName = $this->modelFolderDepth($name);
-        require_once 'App/Model/' . $fileName;
+        require_once 'app/models/' . $fileName;
         $name =  explode('/', $name);
         $className = 'CompartSoftware\App\Model\\' . end($name);
         return new $className();
@@ -37,7 +38,7 @@ class Controller
         $folderLength =  count(explode('/', $name));
         $basePath = '/*';
         $repeatedPath = str_repeat($basePath, $folderLength);
-        $view_files = glob('App/Views' . $repeatedPath . '.php');
+        $view_files = glob('app/views' . $repeatedPath . '.php');
         $fileLength = count(explode('/', $view_files[0]));
 
         foreach ($view_files as $file) {
@@ -60,7 +61,7 @@ class Controller
         $folderLength =  count(explode('/', $name));
         $basePath = '/*';
         $repeatedPath = str_repeat($basePath, $folderLength);
-        $model_files = glob('App/Model' . $repeatedPath . '.php');
+        $model_files = glob('app/models' . $repeatedPath . '.php');
         $fileLength = count(explode('/', $model_files[0]));
 
         foreach ($model_files as $file) {

@@ -11,6 +11,9 @@ class Router
     public static function init(): void
     {
         require 'env.php';
+        $splitURL = explode('/', $BASE_URL);
+        $splitURL = array_filter($splitURL);
+        $BASE_PATH = '/' . end($splitURL);
         self::$BASE_PATH = $BASE_PATH;
     }
 
@@ -56,7 +59,7 @@ class Router
     {
         $basePath = '/*';
         $repeatedPath = str_repeat($basePath, $folderLength);
-        $controller_files = glob('App/Controllers' . $repeatedPath . '.php');
+        $controller_files = glob('app/controllers' . $repeatedPath . '.php');
         $fileLength = count(explode('/', $controller_files[0]));
         foreach ($controller_files as $file) {
             $path = '';
@@ -70,7 +73,7 @@ class Router
                 break;
             }
         }
-        $controllerFile = 'App/Controllers/' . self::$controller[0];
+        $controllerFile = 'app/controllers/' . self::$controller[0];
         return $controllerFile;
     }
 

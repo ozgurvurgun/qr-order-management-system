@@ -42,5 +42,5 @@ use \CompartSoftware\System\Core\Router;
 
 //homepage start
 //Router::run('/', 'HomePage@index');
-Router::run('/{url}', 'shop/HomePage@index');
+Router::run('/{url}/{id}', 'shop/HomePage@index');
 Router::hasRoute();

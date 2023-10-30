@@ -1,12 +1,21 @@
 <?php
-$BASE_PATH = '/qr-order-management-system';
+/**
+ * Warning !!
+   You can choose to either keep or remove the trailing '/' character at the end
+   of the URL according to your preference. Please be mindful of this preference
+   when using base URL in static files (HTML, JavaScript, etc.)
+ 
+ * env.example.php is a sample file. You should make the configurations in the 
+   env.php file in the root directory for the system to function properly.
+ */
+
+$BASE_URL = 'http://localhost/qr-order-management-system/';
 
 /**
- * Variables containing necessary information for the database connection
- * Lines with the '#' symbol must be edited.
+ * @Databasa info
  */
-$DB_HOST = 'host_name'; # 
-$DB_CHAREST = 'charset';
-$DB_NAME = 'db_name'; #
-$DB_USER = 'db_username'; #
-$DB_PASSWORD = 'db_password'; #
+$DB_HOST = 'localhost';
+$DB_CHAREST = 'utf8mb4';
+$DB_NAME = '';
+$DB_USER = 'root';
+$DB_PASSWORD = '';
